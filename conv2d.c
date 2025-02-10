@@ -23,9 +23,44 @@ siguiente kernel de tama˜ no 3 × 3:
 
 typedef float pixel;
 
+ //BLUR
 pixel kernel[K_SIZE] = {  1,1, 1,
-                       1, 1,1,
-                        1,1, 1};
+                          1, 1,1,
+                          1,1, 1};
+
+
+/*//IDENTITY
+pixel kernel[K_SIZE] = {  0,0, 0,
+                          0, 1,0,
+                          0,0, 0};
+*/
+
+/*//SHARPEN
+pixel kernel[K_SIZE] = {  0,-1, 0,
+                          -1,5,-1,
+                          0,-1, 0};
+*/
+//LAPLACE
+/*pixel kernel[K_SIZE] = {  0,-1, 0,
+                          -1,4,-1,
+                          0,-1, 0};
+*/
+/*//TAM 5
+pixel kernel[K_SIZE] = { 1,1,1,1,1,
+                         1,1,1,1,1,
+                         1,1,1,1,1,
+                         1,1,1,1,1,
+                         1,1,1,1,1};
+*/
+/*//TAM 7
+pixel kernel[K_SIZE] = { 1,1,1,1,1,1,1,
+                         1,1,1,1,1,1,1,
+                         1,1,1,1,1,1,1,
+                         1,1,1,1,1,1,1,
+                         1,1,1,1,1,1,1,
+                         1,1,1,1,1,1,1,
+                         1,1,1,1,1,1,1};
+*/
 
 
 
@@ -39,7 +74,7 @@ pixel convolucion(int x, int y, int w, int h){
 
     for(int i = 0; i < K_LEN; i++){
         for(int j = 0; j < K_LEN; j++){
-            cumsum += ampliada[(y + i - PADDING) * (w+2*PADDING) + x + j - PADDING] * kernel[i * K_LEN + j];
+            cumsum += ampliada[(y + i) * (w+2*PADDING) + x + j] * kernel[i * K_LEN + j];
         }
     }
 
