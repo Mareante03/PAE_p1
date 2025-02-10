@@ -1,6 +1,9 @@
+
+
 #include "stdio.h"
 #include "stdlib.h"
 #define GIB_SIZE (1024L * 1024L * 1024L)
+
 
 void daxpy(double *arrX, double *arrY, double alpha, size_t N){
     for(size_t i = 0; i < N; i++){
