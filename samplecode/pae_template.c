@@ -2,10 +2,11 @@
  * @brief Template for Labs
  * 
  * PAE [G4011452] Labs
- * Last update: 
+ * Last update: 14/02/2025
  * Issue date:  30/01/2022
- * 
- * Student name: 
+ *
+ * Student name: Anxo Trillo Santamaría
+ * Student name: Mateo Senín López
  *
  */
 
